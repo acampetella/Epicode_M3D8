@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Netflix</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <!-- aggiungo un foglio di stile personalizzato -->
+    <link rel="stylesheet" href="myStyle.css">
+</head>
+
+<body class="bg-dark px-5">
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark opacity opacity-0">
+        <div class="container-fluid px-0">
+            <a class="navbar-brand" href="#"><img src="./assets/imgs/Netflix_Logo_RGB.png" alt="logo" width="auto"
+                    height="50"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link fs-5" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active fs-5" href="#">TV Shows</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-5" href="#">Movies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-5" href="#">Recently Added</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-5" href="#">My List</a>
+                    </li>
+                </ul>
+                <div class="d-flex" role="search">
+                    <!-- icona per mostrare il div di ricerca -->
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#searchModal"
+                        class="bg-dark border-0"><i class="bi bi-search fs-5 mx-3" style="color: white;"></i></button>
+                    <span class="fs-5 mx-3" style="color: white;">KIDS</span>
+                    <a href="#"><i class="bi bi-bell-fill fs-5 mx-3" style="color: white;"></i></a>
+                    <a href="#"><i class="bi bi-person-circle fs-5 ms-3" style="color: white;"></i></a>
+                    <a href="#"><i class="bi bi-caret-down-fill fs-6 mx-1 align-middle" style="color: white;"></i></a>
+                    <!-- div di ricerca inizialmente nascosto 
+                    verrà mostrato cliccando sull'icona della lente -->
+                    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content bg-dark">
+                                <div class="modal-header border-0">
+                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body mb-5">
+                                    <input type="text" placeholder="Search"
+                                        class="bg-dark w-100 fs-3 border-end-0 text-light">
+                                </div>
+                                <div class="modal-footer border-0 mb-5"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- header -->
+    <header class="d-flex flex-row justify-content-between flex-wrap opacity-0">
+        <div class="d-flex flex-row gap-5 my-3">
+            <h1 class="text-white">TV Shows</h1>
+            <!-- pulsante che mostra l'elenco dei generi -->
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle bg-dark fs-4 px-3" type="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Genres
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a class="dropdown-item" href="#">Commedy</a></li>
+                    <li><a class="dropdown-item" href="#">Comics</a></li>
+                    <li><a class="dropdown-item" href="#">Thriller</a></li>
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Sentimental</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="d-flex flex-row my-3">
+            <div class="border border-1 px-4">
+                <i class="bi bi-list-ul fs-1" style="color: white;"></i>
+            </div>
+            <div class="border border-1 px-4">
+                <i class="bi bi-grid fs-1" style="color: white;"></i>
+            </div>
+        </div>
+    </header>
+    <!-- main -->
+    <main>
+        <!-- Trending Now section -->
+        <section id="trendingNowSection" class="my-4 opacity-0">
+            <h3 class="text-white">Trending now</h3>
+            <div id="trendingNowCarousel" class="carousel slide">
+                <!-- la classe myLast è stata associata all'ultima immagine del carosello, che
+                viene mostrata solo in parte -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <a href="#"><img src="./assets/imgs/movies/1.png" alt=""></a>
+                        <a href="#"><img src="./assets/imgs/movies/2.png" alt=""></a>
+                        <a href="#"><img src="./assets/imgs/movies/3.png" alt=""></a>
+                        <a href="#"><img src="./assets/imgs/movies/4.png" alt=""></a>
+                        <a href="#"><img src="./assets/imgs/movies/5.png" alt=""></a>
+                        <a href="#"><img src="./assets/imgs/movies/6.png" alt=""></a>
+                        <a href="#"><img class="myLast" src="./assets/imgs/movies/7.png" alt=""></a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="#"><img src="./assets/imgs/movies/7.png" alt=""></a>
+                        <a href="#"><img src="./assets/imgs/movies/8.png" alt=""></a>
+                        <a href="#"><img src="./assets/imgs/movies/9.png" alt=""></a>
+                        <a href="#"><img src="./assets/imgs/movies/10.png" alt=""></a>
+                        <a href="#"><img src="./assets/imgs/movies/11.png" alt=""></a>
+                        <a href="#"><img src="./assets/imgs/movies/12.png" alt=""></a>
+                        <a href="#"><img class="myLast" src="./assets/imgs/movies/13.png" alt=""></a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="#"><img src="./assets/imgs/movies/13.png" alt=""></a>
+                        <a href="#"><img src="./assets/imgs/movies/14.png" alt=""></a>
+                        <a href="#"><img src="./assets/imgs/movies/15.png" alt=""></a>
+                        <a href="#"><img src="./assets/imgs/movies/16.png" alt=""></a>
+                        <a href="#"><img src="./assets/imgs/movies/17.png" alt=""></a>
+                        <a href="#"><img src="./assets/imgs/movies/18.png" alt=""></a>
+                        <a href="#"><img class="myLast" src="./assets/imgs/movies/1.png" alt=""></a>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#trendingNowCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#trendingNowCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+        <!-- Watch It Again section -->
+        <section id="watchItAgainSection" class="my-4 opacity-0">
+            <h3 class="text-white">Watch It Again</h3>
+            <div id="watchItAgainCarousel" class="carousel slide">
+                <!-- la classe myLast è stata associata all'ultima immagine del carosello, che
+                viene mostrata solo in parte -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <a href="#"><img src="./assets/imgs/movies/7.png" alt=""></a>
+                        <a href="#"><img src="./assets/imgs/movies/8.png" alt=""></a>
+                        <a href="#"><img src="./assets/imgs/movies/9.png" alt=""></a>
+                        <a href="#"><img src="./assets/imgs/movies/10.png" alt=""></a>
+                        <a href="#"><img src="./assets/imgs/movies/11.png" alt=""></a>
+                        <a href="#"><img src="./assets/imgs/movies/12.png" alt=""></a>
+                        <a href="#"><img class="myLast" src="./assets/imgs/movies/13.png" alt=""></a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="#"><img src="./assets/imgs/movies/13.png" alt=""></a>
+                        <a href="#"><img src="./assets/imgs/movies/14.png" alt=""></a>
+                        <a href="#"><img src="./assets/imgs/movies/15.png" alt=""></a>
+                        <a href="#"><img src="./assets/imgs/movies/16.png" alt=""></a>
+                        <a href="#"><img src="./assets/imgs/movies/17.png" alt=""></a>
+                        <a href="#"><img src="./assets/imgs/movies/18.png" alt=""></a>
+                        <a href="#"><img class="myLast" src="./assets/imgs/movies/1.png" alt=""></a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="#"><img src="./assets/imgs/movies/1.png" alt=""></a>
+                        <a href="#"><img src="./assets/imgs/movies/2.png" alt=""></a>
+                        <a href="#"><img src="./assets/imgs/movies/3.png" alt=""></a>
+                        <a href="#"><img src="./assets/imgs/movies/4.png" alt=""></a>
+                        <a href="#"><img src="./assets/imgs/movies/5.png" alt=""></a>
+                        <a href="#"><img src="./assets/imgs/movies/6.png" alt=""></a>
+                        <a href="#"><img class="myLast" src="./assets/imgs/movies/7.png" alt=""></a>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#watchItAgainCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#watchItAgainCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+        <!-- New Releases section -->
+        <section id="newReleasesSection" class="my-4 opacity-0">
+            <h3 class="text-white">New Releases</h3>
+            <div id="newReleasesCarousel" class="carousel slide">
+                <!-- la classe myLast è stata associata all'ultima immagine del carosello, che
+                viene mostrata solo in parte -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <a href="#"><img src="./assets/imgs/movies/13.png" alt=""></a>
+                        <a href="#"><img src="./assets/imgs/movies/14.png" alt=""></a>
+                        <a href="#"><img src="./assets/imgs/movies/15.png" alt=""></a>
+                        <a href="#"><img src="./assets/imgs/movies/16.png" alt=""></a>
+                        <a href="#"><img src="./assets/imgs/movies/17.png" alt=""></a>
+                        <a href="#"><img src="./assets/imgs/movies/18.png" alt=""></a>
+                        <a href="#"><img class="myLast" src="./assets/imgs/movies/1.png" alt=""></a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="#"><img src="./assets/imgs/movies/1.png" alt=""></a>
+                        <a href="#"><img src="./assets/imgs/movies/2.png" alt=""></a>
+                        <a href="#"><img src="./assets/imgs/movies/3.png" alt=""></a>
+                        <a href="#"><img src="./assets/imgs/movies/4.png" alt=""></a>
+                        <a href="#"><img src="./assets/imgs/movies/5.png" alt=""></a>
+                        <a href="#"><img src="./assets/imgs/movies/6.png" alt=""></a>
+                        <a href="#"><img class="myLast" src="./assets/imgs/movies/7.png" alt=""></a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="#"><img src="./assets/imgs/movies/7.png" alt=""></a>
+                        <a href="#"><img src="./assets/imgs/movies/8.png" alt=""></a>
+                        <a href="#"><img src="./assets/imgs/movies/9.png" alt=""></a>
+                        <a href="#"><img src="./assets/imgs/movies/10.png" alt=""></a>
+                        <a href="#"><img src="./assets/imgs/movies/11.png" alt=""></a>
+                        <a href="#"><img src="./assets/imgs/movies/12.png" alt=""></a>
+                        <a href="#"><img class="myLast" src="./assets/imgs/movies/13.png" alt=""></a>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#newReleasesCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#newReleasesCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+    </main>
+    <footer class="mt-5 pt-5 mb-2 opacity-0">
+        <div class="container">
+            <div class="row my-3">
+                <div class="col-12">
+                    <a href="#"><i class="bi bi-facebook fs-4 me-3" style="color: lightgray"></i></a>
+                    <a href="#"><i class="bi bi-instagram fs-4 me-3" style="color: lightgray"></i></a>
+                    <a href="#"><i class="bi bi-twitter fs-4 me-3" style="color: lightgray"></i></a>
+                    <a href="#"><i class="bi bi-youtube fs-4 me-3" style="color: lightgray"></i></a>
+                </div>
+            </div>
+            <div class="row my-2">
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="#" class="text-decoration-none text-white-50">Audio and Subtitles</a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="#" class="text-decoration-none text-white-50">Audio Description</a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="#" class="text-decoration-none text-white-50">Help Center</a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="#" class="text-decoration-none text-white-50">Gift Cards</a>
+                </div>
+            </div>
+            <div class="row my-2">
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="#" class="text-decoration-none text-white-50">Media Center</a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="#" class="text-decoration-none text-white-50">Investor Relations</a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="#" class="text-decoration-none text-white-50">Jobs</a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="#" class="text-decoration-none text-white-50">Term of Use</a>
+                </div>
+            </div>
+            <div class="row my-2">
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="#" class="text-decoration-none text-white-50">Privacy</a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="#" class="text-decoration-none text-white-50">Legal Notices</a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="#" class="text-decoration-none text-white-50">Cookie Preferencies</a>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <a href="#" class="text-decoration-none text-white-50">Corporate Information</a>
+                </div>
+            </div>
+            <div class="row my-2">
+                <div class="col-4">
+                    <a href="#" class="text-decoration-none text-white-50">Contact Us</a>
+                </div>
+            </div>
+            <div class="row mt-4 mb-3">
+                <div class="col-md-12 col-lg-4">
+                    <button class="bg-dark text-white-50 border border-1 border-white">Service Code</button>
+                </div>
+            </div>
+            <div class="row my-2">
+                <div class="col-12">
+                    <span><i class="bi bi-c-circle fs-6" style="color: lightgray">1997-2019 Netflix, Inc.
+                            {i-0d00fcda2fdf9c0de}</i></span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script src="./myScript.js"></script>
+</body>
+
+</html>

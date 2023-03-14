@@ -1,0 +1,92 @@
+
+/* media query per la gestione della dimensione delle immagini all'interno del carosello*/
+
+/* regole css applicate a schermi di dimensione maggiore o uguale a 1400 px */
+@media screen and (min-width: 1400px) {
+    
+    .carousel-item a img {
+        width: 14vw;
+        height: 15vh;
+    }
+
+    /* classe associata all'ultima immagine del carosello, che si mostra solo in parte */
+    .carousel-item a img.myLast {
+        width: 5vw;
+        height: 15vh;
+        object-fit: cover;
+        object-position: left;
+    }
+}
+
+/* regole css applicate a schermi di dimensione compresa tra 768 e 1400 px */
+@media screen and (min-width: 768px) and (max-width: 1400px) {
+
+    .carousel-item a img {
+        width: 30%;
+    }
+
+    /* l'ultima immagine viene tolta per gestire un numero pari di immagini */
+    .carousel-item a img.myLast {
+        display: none;
+    }
+}
+
+/* regole css applicate a schermi di dimensione inferiore a 768 px */
+@media screen and (max-width: 768px) {
+    
+    .carousel-item a img {
+        width: 45%;
+    }
+
+    .carousel-item a img.myLast {
+        display: none;
+    }    
+}
+
+/* classe che definisce l'animazione per mostrare una sezione */
+.animation {
+    animation-name: showSection;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+}
+
+/* classe per l'animazione che mostra la navbar */
+.navbarAnimation {
+    animation-delay: .5s;
+}
+
+/* classe per l'animazione che mostra l'header */
+.headerAnimation {
+    animation-delay: 2.5s;
+}
+
+/* classe per l'animazione che mostra la prima sezione */
+.trendingNowSectionAnimation {
+    animation-delay: 4.5s;
+}
+
+/* classe per l'animazione che mostra la seconda sezione */
+.watchItAgainSectionAnimation {
+    animation-delay: 6.5s;
+}
+
+/* classe per l'animazione che mostra la terza sezione */
+.newReleasesSectionAnimation {
+    animation-delay: 8.5s;
+}
+
+/* classe per l'animazione che mostra il footer */
+.footerAnimation {
+    animation-delay: 10.5s;
+}
+
+/* keyframe relativo all'animazione che mostra le sezioni */
+@keyframes showSection {
+    0% {opacity: 0;}
+    25% {opacity: 0.25;}
+    50% {opacity: 0.50;}
+    75% {opacity: 0.75;}
+    100% {opacity: 1;}
+}
+
